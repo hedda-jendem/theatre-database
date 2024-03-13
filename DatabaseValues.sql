@@ -45,25 +45,6 @@ INSERT INTO Prisliste (Type, Pris, Stykke) VALUES
 ('Grupper Over 10', 320.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten')),
 ('Teaterkort Ung-medlem', 130.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten'));
 
--- Skuespillere for Størst av alt er kjærligheten fra Trøndelag Teater
-INSERT INTO Skuespiller (SkuespillerID, Navn) VALUES 
-(8, 'Sunniva Du Mond Nordal'),
-(9, 'Jo Saberniak'),
-(10, 'Marte M. Steinholt'),
-(11, 'Tor Ivar Hagen'),
-(12, 'Trond-Ove Skrødal'),
-(13, 'Natalie Grøndahl Tangen'),
-(14, 'Åsmund Flaten');
-
--- Roller for Størst av alt er kjærligheten, med rollenavn som skuespillernes navn
-INSERT INTO Rolle (RolleID, Navn) VALUES 
-(13, 'Sunniva Du Mond Nordal'),
-(14, 'Jo Saberniak'),
-(15, 'Marte M. Steinholt'),
-(16, 'Tor Ivar Hagen'),
-(17, 'Trond-Ove Skrødal'),
-(18, 'Natalie Grøndahl Tangen'),
-(19, 'Åsmund Flaten');
 
 -- Skuespillere for Kongsemnene fra Trøndelag Teater
 INSERT INTO Skuespiller (SkuespillerID, Navn) VALUES 
@@ -82,43 +63,72 @@ INSERT INTO Skuespiller (SkuespillerID, Navn) VALUES
 
 --  Roller for Kongsemnene fra Trøndelag Teater
 INSERT INTO Rolle (RolleID, Navn) VALUES 
-(1, 'Haakon Haakonssnn'),
+(1, 'Haakon Haakonssønn'),
 (2, 'Inga fra Varteig'),
 (3, 'Skule Jarl'),
 (4, 'Fru Ragnhild'),
-(5, 'Margrete (Skules datter)'),
-(6, 'Sigrid (Skules søster) / Ingebjørg'),
-(7, 'Biskop Nikolas'),
-(8, 'Gregorius Jonssonn'),
-(9, 'Paal Flida / Trønder'),
-(10, 'Baard Bratte / Trønder'),
-(11, 'Jatgeir Skald / Dagfinn Bonde'),
-(12, 'Peter (prest og Ingebjørgs sønn)');
+(5, 'Margrete'),
+(6, 'Sigrid'),
+(7, 'Ingebjørg'),
+(8, 'Biskop Nikolas'),
+(9, 'Gregorius Jonssonn'),
+(10, 'Paal Flida'),
+(11, 'Trønder 1'),
+(12, 'Baard Bratte'),
+(13, 'Trønder 2'),
+(14, 'Jatgeir Skald'),
+(15, 'Dagfinn Bonde'),
+(16, 'Peter');
+
+-- Skuespillere for Størst av alt er kjærligheten fra Trøndelag Teater
+INSERT INTO Skuespiller (SkuespillerID, Navn) VALUES 
+(13, 'Sunniva Du Mond Nordal'),
+(14, 'Jo Saberniak'),
+(15, 'Marte M. Steinholt'),
+(16, 'Tor Ivar Hagen'),
+(17, 'Trond-Ove Skrødal'),
+(18, 'Natalie Grøndahl Tangen'),
+(19, 'Åsmund Flaten');
+
+-- Roller for Størst av alt er kjærligheten, med rollenavn som skuespillernes navn
+INSERT INTO Rolle (RolleID, Navn) VALUES 
+(20, 'Sunniva Du Mond Nordal'),
+(21, 'Jo Saberniak'),
+(22, 'Marte M. Steinholt'),
+(23, 'Tor Ivar Hagen'),
+(24, 'Trond-Ove Skrødal'),
+(25, 'Natalie Grøndahl Tangen'),
+(26, 'Åsmund Flaten');
 
 -- RolleBesetning for Kongsemnene
 INSERT INTO RolleBesetning (Skuespiller, Rolle) VALUES 
-(1, 1),  -- Arturo Scotti som Haakon Haakonssnn
-(2, 2),  -- Ingunn Beate Strige Øyen som Inga fra Varteig (Haakons mor)
+(1, 1),  -- Arturo Scotti som Haakon Haakonssønn
+(2, 2),  -- Ingunn Beate Strige Øyen som Inga fra Varteig
 (3, 3),  -- Hans Petter Nilsen som Skule Jarl
-(4, 4),  -- Madeleine Brandtzæg Nilsen som Fru Ragnhild (Skules hustru)
-(5, 5),  -- Synnøve Fossum Eriksen som Margrete (Skules datter)
-(6, 6),  -- Emma Caroline Deichmann som Sigrid (Skules søster) / Ingebjørg
-(7, 7),  -- Thomas Jensen Takyi som Biskop Nikolas
-(8, 8),  -- Per Bogstad Gulliksen som Gregorius Jonssonn
-(9, 9),  -- Isak Holmen Sørensen som Paal Flida / Trønder
-(10, 10), -- Fabian Heidelberg Lunde som Baard Bratte / Trønder
-(11, 11), -- Emil Olafsson som Jatgeir Skald / Dagfinn Bonde
-(12, 12); -- Snorre Ryen Tøndel som Peter (prest og Ingebjørgs sønn)
+(4, 4),  -- Madeleine Brandtzæg Nilsen som Fru Ragnhild
+(5, 5),  -- Synnøve Fossum Eriksen som Margrete
+(6, 6),  -- Emma Caroline Deichmann som Sigrid
+(6, 7),  -- Emma Caroline Deichmann som Ingebjørg (Emma spiller både Sigrid og Ingebjørg)
+(7, 8),  -- Thomas Jensen Takyi som Biskop Nikolas
+(8, 9),  -- Per Bogstad Gulliksen som Gregorius Jonssonn
+(9, 10), -- Isak Holmen Sørensen som Paal Flida
+(9, 11), -- Isak Holmen Sørensen som Trønder 1 (Isak spiller både Paal Flida og Trønder 1)
+(10, 12),-- Fabian Heidelberg Lunde som Baard Bratte
+(10, 13),-- Fabian Heidelberg Lunde som Trønder 2 (Fabian spiller både Baard Bratte og Trønder 2)
+(11, 14),-- Emil Olafsson som Jatgeir Skald
+(11, 15),-- Emil Olafsson som Dagfinn Bonde (Emil spiller både Jatgeir Skald og Dagfinn Bonde)
+(12, 16);-- Snorre Ryen Tøndel som Peter
+
 
 -- RolleBesetning for Størst av alt er kjærligheten
 INSERT INTO RolleBesetning (Skuespiller, Rolle) VALUES 
-(8, 13),  -- Sunniva Du Mond Nordal spiller seg selv
-(9, 14),  -- Jo Saberniak spiller seg selv
-(10, 15), -- Marte M. Steinholt spiller seg selv
-(11, 16), -- Tor Ivar Hagen spiller seg selv
-(12, 17), -- Trond-Ove Skrødal spiller seg selv
-(13, 18), -- Natalie Grøndahl Tangen spiller seg selv
-(14, 19); -- Åsmund Flaten spiller seg selv
+(13, 20), -- Sunniva Du Mond Nordal spiller seg selv
+(14, 21), -- Jo Saberniak spiller seg selv
+(15, 22), -- Marte M. Steinholt spiller seg selv
+(16, 23), -- Tor Ivar Hagen spiller seg selv
+(17, 24), -- Trond-Ove Skrødal spiller seg selv
+(18, 25), -- Natalie Grøndahl Tangen spiller seg selv
+(19, 26); -- Åsmund Flaten spiller seg selv
 
 -- Legger til akter for Kongsemnene
 INSERT INTO Akt (AktNr, Navn, Stykke) VALUES 
@@ -130,44 +140,93 @@ INSERT INTO Akt (AktNr, Navn, Stykke) VALUES
 
 -- Aktene for Håkon Håkonsson i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 1),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 2),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 3),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 4),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 5);
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5);
 
--- Aktene for Håkon Håkonsson i Kongsemnene
+-- Aktene for Dagfinn Bonde i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 1),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 2),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 3),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 4),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Håkon Håkonsson'), 5);
+(15, 1),
+(15, 2),
+(15, 3),
+(15, 4),
+(15, 5);
 
--- Aktene for Inga fra Varteig i Kongsemnene
+-- Aktene for Jatgeir Skald i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Jatgeir Skald'), 4);
+(14, 4);
 
+-- Aktene for Sigrid i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Sigrid'), 1),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Sigrid'), 2),
-((SELECT RolleID FROM Rolle WHERE Navn = 'Sigrid'), 5);
+(6, 1),
+(6, 2),
+(6, 5);
+
+-- Aktene for Ingebjørg i Kongsemnene (korrigert fra 'Ingeborg')
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(7, 4);
 
 -- Aktene for Skule Jarl i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Ingebjørg'), 4);
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 5);
 
--- Aktene for Fru Ragnhild i Kongsemnene
+-- Aktene for Inga fra Varteig i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-((SELECT RolleID FROM Rolle WHERE Navn = 'Guttorm Ingesson'), 1);
+(2, 4),
 
+-- Aktene for Paal Flida i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(10, 1),
+(10, 2),
+(10, 3),
+(10, 4),
+(10, 5);
+
+-- Aktene for Fru Ragnhild i Kongsemnene 
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(4, 1),
+(4, 5);
+
+-- Aktene for Gregorius Jonsson i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(9, 1),
+(9, 2),
+(9, 3),
+(9, 4),
+(9, 5);
+
+-- Aktene for Margrete i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(5, 1),
+(5, 2),
+(5, 3),
+(5, 4),
+(5, 5);
+
+-- Aktene for Biskop Nikolas i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(8, 1),
+(8, 2),
+(8, 3);
+
+-- Aktene for Peter i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
+(16, 3),
+(16, 4),
+(16, 5);
 
 -- Legger til personer i Person-tabellen som jobber ved Kongsemnene
 INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES 
-(next value for person_seq, 'Yury Butusov', null, true),
-(next value for person_seq, 'Mina Rype Stokke', null, true),
-(next value for person_seq, 'Aleksandr Shishkin-Hokusai', null, true),
-(next value for person_seq, 'Eivind Myren', null, true);
+(1, 'Yury Butusov', null, true),
+(2, 'Mina Rype Stokke', null, true),
+(3, 'Aleksandr Shishkin-Hokusai', null, true),
+(4, 'Eivind Myren', null, true);
 
 -- Legger til oppgaver i Oppgave-tabellen, anta at OppgaveNr er autoinkrementert, og vi bruker derfor ikke den i INSERT-setningen
 INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES 
@@ -176,13 +235,13 @@ INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES
 ('Scenografi og kostymer', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Aleksandr Shishkin-Hokusai')),
 ('Lysdesign', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Eivind Myren'));
 
--- Legger til personer i Person-tabellen
+-- Legger til personer i Person-tabellen som jobber ved Størst av alt er kjærligheten
 INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES 
-(next value for person_seq, 'Jonas Corell Petersen', null, true),
-(next value for person_seq, 'Magnus Mikaelsen', null, true),
-(next value for person_seq, 'David Gehrt', null, true),
-(next value for person_seq, 'Gaute Tønder', null, true),
-(next value for person_seq, 'Kristoffer Spender', null, true);
+(5, 'Jonas Corell Petersen', null, true),
+(6, 'Magnus Mikaelsen', null, true),
+(7, 'David Gehrt', null, true),
+(8, 'Gaute Tønder', null, true),
+(9, 'Kristoffer Spender', null, true);
 
 -- Legger til oppgaver i Oppgave-tabellen
 INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES 
