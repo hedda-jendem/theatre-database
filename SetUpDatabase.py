@@ -4,7 +4,7 @@ def read_SQL(sqlFile):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
-    with open('TeaterTabellSetup.sql', 'r') as f:
+    with open(sqlFile, 'r') as f:
         sqlFile = f.read()
 
     sql_commands = sqlFile.split(';')
