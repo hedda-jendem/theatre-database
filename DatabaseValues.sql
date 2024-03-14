@@ -178,7 +178,7 @@ INSERT INTO RolleIAkt (Rolle, Akt) VALUES
 
 -- Aktene for Inga fra Varteig i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(2, 4),
+(2, 4);
 
 -- Aktene for Paal Flida i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
