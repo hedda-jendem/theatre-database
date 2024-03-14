@@ -1,0 +1,28 @@
+import sqlite3
+
+con = sqlite3.connect("TeaterDatabase.db")
+cursor = con.cursor()
+
+cursor.execute('INSERT INTO Kunde (KundeID, Navn,) VALUES (?,?)', (1, "Standarbruker"))
+cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
+
+con.commit()
+con.close()
+
+def read_gamlescenen(fil):
+    with open(fil, 'r') as f:
+        lines = f.readlines()
+
+    for line in lines:
+        if "Dato" in line:
+            words = line.split()
+            for word in words:
+                if len(word) == 10 and word[4] == "-" and word[7] == "-":
+                    dato = word
+                    print(dato)  # print the date
+        
+        
+
+
+# Call the function with the path to your .txt file
+read_gamlescenen('gamle-scene.txt')
