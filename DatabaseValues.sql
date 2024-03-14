@@ -229,11 +229,11 @@ INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES
 (4, 'Eivind Myren', null, true);
 
 -- Legger til oppgaver i Oppgave-tabellen, anta at OppgaveNr er autoinkrementert, og vi bruker derfor ikke den i INSERT-setningen
-INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES 
-('Regi og musikkutvelgelse', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Yury Butusov')),
-('Dramaturg', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Mina Rype Stokke')),
-('Scenografi og kostymer', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Aleksandr Shishkin-Hokusai')),
-('Lysdesign', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Eivind Myren'));
+INSERT INTO Oppgave (OppgaveNr, Titel, Beskrivelse, Stykke, PersonID) VALUES 
+(1, 'Regi og musikkutvelgelse', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Yury Butusov')),
+(2, 'Dramaturg', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Mina Rype Stokke')),
+(3, 'Scenografi og kostymer', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Aleksandr Shishkin-Hokusai')),
+(4, 'Lysdesign', null, 1, (SELECT PersonID FROM Person WHERE Navn = 'Eivind Myren'));
 
 -- Legger til personer i Person-tabellen som jobber ved Størst av alt er kjærligheten
 INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES 
@@ -245,11 +245,11 @@ INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES
 
 -- Legger til oppgaver i Oppgave-tabellen
 INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES 
-('Regi', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Jonas Corell Petersen')),
-('Lysdesign', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Magnus Mikaelsen')),
-('Scenografi og kostymer', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'David Gehrt')),
-('Musikalsk ansvarlig', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Gaute Tønder')),
-('Dramaturg', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Kristoffer Spender'));
+(5, 'Regi', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Jonas Corell Petersen')),
+(6, 'Lysdesign', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Magnus Mikaelsen')),
+(7, 'Scenografi og kostymer', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'David Gehrt')),
+(8, 'Musikalsk ansvarlig', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Gaute Tønder')),
+(9, 'Dramaturg', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Kristoffer Spender'));
 
 
 
