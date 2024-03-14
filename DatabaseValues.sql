@@ -31,19 +31,19 @@ INSERT INTO Forestilling (Dato, Klokkeslett, Stykke) VALUES
 
 -- Setter opp Prisliste for Kognsemnene 
 INSERT INTO Prisliste (Type, Pris, Stykke) VALUES 
-('Voksen', 450.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Kongsemnene')),
-('Honnør', 380.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Kongsemnene')),
-('Student', 280.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Kongsemnene')),
-('Gruppe 10', 420.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Kongsemnene')),
-('Gruppe honnør 10', 360.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Kongsemnene'));
+('Voksen', 450.00, 1),
+('Honnør', 380.00, 1),
+('Student', 280.00, 1),
+('Gruppe 10', 420.00, 1),
+('Gruppe honnør 10', 360.00, 1);
 
 -- Setter opp Prisliste for Størst av alt er kjærligheten
 INSERT INTO Prisliste (Type, Pris, Stykke) VALUES 
-('Ordinær', 350.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten')),
-('Honnør', 300.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten')),
-('Barn/student', 220.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten')),
-('Grupper Over 10', 320.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten')),
-('Teaterkort Ung-medlem', 130.00, (SELECT StykkeID FROM Stykke WHERE Navn = 'Størst av alt er kjærligheten'));
+('Ordinær', 350.00, 2),
+('Honnør', 300.00, 2),
+('Barn/student', 220.00, 2),
+('Grupper Over 10', 320.00, 2),
+('Teaterkort Ung-medlem', 130.00, 2);
 
 
 -- Skuespillere for Kongsemnene fra Trøndelag Teater
@@ -244,7 +244,7 @@ INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES
 (9, 'Kristoffer Spender', null, true);
 
 -- Legger til oppgaver i Oppgave-tabellen
-INSERT INTO Oppgave (Titel, Beskrivelse, Stykke, PersonID) VALUES 
+INSERT INTO Oppgave (OppgaveNr, Titel, Beskrivelse, Stykke, PersonID) VALUES 
 (5, 'Regi', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Jonas Corell Petersen')),
 (6, 'Lysdesign', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Magnus Mikaelsen')),
 (7, 'Scenografi og kostymer', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'David Gehrt')),
