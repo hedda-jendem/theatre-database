@@ -46,6 +46,7 @@ def read_gamlescenen(fil):
                 if char == '1':
                     #cursor.execute('INSERT INTO Billett (Stolnummer, Radnummer, Omradenavn, SalID, OrdreID) VALUES (?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn, SalID, 1))
                     cursor.execute('INSERT INTO ReservertStol (BillettID, OrdreID, Stolnummer, Radnummer, Omradenavn, SalID) VALUES (?, ?, ?, ?, ?, ?) ', (teller, 1, Stolnummer, Radnummer, omradeNavn.strip(), SalID))
+                    cursor.execute('INSERT INTO ReservertForestilling(OrdreID,ForestillingDato,ForestillingKl) VALUES (?,?,?)', (1, dato, '18:30:00' ))
                     teller += 1
         
                     print(f"Sete {Stolnummer} i rad {Radnummer} i området {omradeNavn} er tatt med {teller}")
@@ -55,6 +56,5 @@ def read_gamlescenen(fil):
     con.close()       
 
  
-
 
 read_gamlescenen('gamle-scene.txt')
