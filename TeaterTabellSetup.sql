@@ -20,9 +20,8 @@ create table Stol (
 -- Oppretter Forestilling tabellen
 create table Forestilling (
     Dato date not null,
-    Klokkeslett time not null,
     Stykke int not null,
-    primary key (Dato, Klokkeslett, Stykke),
+    primary key (Dato, Stykke),
     foreign key (Stykke) references Stykke(StykkeID)
     on update cascade
     on delete no action
@@ -123,83 +122,78 @@ create table Oppgave (
 -- Oppretter Kunde tabellen
 create table Kunde (
     KundeID int primary key,
-    Mobilnummer varchar(20) not null,
+    Mobilnummer varchar(20),
     Navn varchar(30) not null,
-    Adresse text not null
+    Adresse text 
 );
 
 -- Oppretter Ordre tabellen
 create table Ordre (
     OrdreID int primary key,
-    Dato date not null,
-    Tid time not null,
+    Dato date,
+    Tid time,
     KundeID int not null,
-    TotalPris decimal(6, 2) not null,
-    Antall int not null,
+    TotalPris decimal(6, 2),
+    Antall int,
     foreign key (KundeID) references Kunde(KundeID)
 );
 
--- Oppretter BillettType tabellen
-create table BillettType (
-    BillettID int not null,
+--Oppretter Billett tabellen
+create table Billett (
+    BillettID int,
     OrdreID int not null,
-    Type varchar(30) not null,
-    primary key (OrdreID, BillettID),
-    foreign key (OrdreID) references Ordre(OrdreID)
-        on update cascade
-        on delete cascade,
-    foreign key (Type) references Prisliste(Type)
-        on update cascade
-        on delete cascade
-);
-
--- Oppretter BillettForestilling tabellen
-create table BillettForestilling (
-    OrdreID int not null primary key,
-    StykkeID int not null, 
-    foreign key (OrdreID) references Ordre(OrdreID)
-        on update cascade
-        on delete no action,
-    foreign key (StykkeID) references Stykke(StykkeID) 
-        on update cascade
-        on delete no action
-);
-
--- Oppretter ResevertForestilling tabellen
-create table ReservertForestilling (
-    OrdreID int not null,
-    ForestillingDato date not null,
-    ForestillingKl time not null,
-    Stykke int not null,
-    primary key (OrdreID),
-    foreign key (OrdreID) references BillettForestilling(OrdreID)
-        on update cascade
-        on delete cascade,
-    foreign key (ForestillingDato, ForestillingKl) references Forestilling(Dato, Klokkeslett)
-        on update cascade
-        on delete cascade,
-    foreign key (Stykke) references Stykke(StykkeID)
-        on update no action
-        on delete cascade
-);
-
-
--- Oppretter ReservertStol tabellen
-create table ReservertStol (
-    BillettID int not null,
-    OrdreID int not null,
+    StykkeID int not null,
+    Pris int not null,
+    BillettType varchar(30) not null,
     Stolnummer int not null,
-    Radnummer int not null,
-    Omradenavn varchar(30) not null,
+    Stolrad int not null,
+    Stolomrade varchar(30) not null,
     SalID int not null,
+    ForestillingDato date not null,
     primary key (OrdreID, BillettID),
-    foreign key (BillettID,OrdreID) references BillettType(BillettID,OrdreID) 
-        on update cascade
-        on delete cascade,
-    foreign key (Stolnummer, Radnummer, Omradenavn, SalID) references Stol(Stolnummer, Radnummer, Omradenavn, SalID)
-        on update cascade
-        on delete cascade,
     foreign key (OrdreID) references Ordre(OrdreID)
         on update cascade
         on delete cascade
+    foreign key (StykkeID) references Stykke(StykkeID)
+        on update cascade
+        on delete cascade
+    foreign key (Pris) references Prisliste(Pris)
+        on update cascade
+        on delete cascade
+    foreign key (Stolnummer, Stolrad, Stolomrade) references Stol(Stolnummer, Stolrad, Stolomrade)
+        on update cascade
+        on delete cascade
+    foreign key (SalID) references TeaterSal(SalID)
+        on update cascade
+        on delete cascade
+    foreign key (ForestillingDato) references Forestilling(Dato)
+        on update cascade
+        on delete cascade
 );
+
+--Oppretter Reservert tabellen
+CREATE TABLE Reservert (
+    Stolnummer INT NOT NULL,
+    Stolrad INT NOT NULL,
+    Stolområde VARCHAR(30) NOT NULL,
+    Sal INT NOT NULL,
+    Billett INT NOT NULL,
+    Ordre INT NOT NULL,
+    ForestillingDato DATE NOT NULL,
+    Stykke INT NOT NULL,
+    Kunde INT NOT NULL,
+    PRIMARY KEY (Stolnummer, Stolrad, Stolområde, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde),
+    FOREIGN KEY (Stolnummer, Stolrad, Stolområde, Sal) REFERENCES Stol(Stolnummer, Radnummer, Område, SalID)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (Billett,Ordre) REFERENCES Billett(BillettID,OrdreID)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (ForestillingDato,Stykke) REFERENCES Forestilling(Dato,StykkeID)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE,
+    FOREIGN KEY (Kunde) REFERENCES Kunde(KundeID)
+        ON UPDATE CASCADE 
+        ON DELETE CASCADE
+);
+

@@ -13,21 +13,21 @@ INSERT INTO Stykke (StykkeID, Navn, TeaterSal) VALUES
 (2, 'Størst av alt er kjærligheten', 2);
 
 -- Setter opp Kongsemnene Forestillinger
-INSERT INTO Forestilling (Dato, Klokkeslett, Stykke) VALUES 
-('2024-02-01', '19:00', 1),
-('2024-02-02', '19:00', 1),
-('2024-02-03', '19:00', 1),
-('2024-02-05', '19:00', 1),
-('2024-02-06', '19:00', 1);
+INSERT INTO Forestilling (Dato, Stykke) VALUES 
+('2024-02-01', 1),
+('2024-02-02', 1),
+('2024-02-03', 1),
+('2024-02-05', 1),
+('2024-02-06', 1);
 
 -- Setter opp Størst av alt er kjærligheten Forestillinger
-INSERT INTO Forestilling (Dato, Klokkeslett, Stykke) VALUES 
-('2024-02-03', '18:30', 2),
-('2024-02-06', '18:30', 2),
-('2024-02-07', '18:30', 2),
-('2024-02-12', '18:30', 2),
-('2024-02-13', '18:30', 2),
-('2024-02-14', '18:30', 2);
+INSERT INTO Forestilling (Dato, Stykke) VALUES 
+('2024-02-03', 2),
+('2024-02-06', 2),
+('2024-02-07', 2),
+('2024-02-12', 2),
+('2024-02-13', 2),
+('2024-02-14', 2);
 
 -- Setter opp Prisliste for Kognsemnene 
 INSERT INTO Prisliste (Type, Pris, Stykke) VALUES 
