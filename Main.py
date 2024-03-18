@@ -1,0 +1,52 @@
+from brukstilfelle_2 import read_hovedscene, read_gamlescenen
+import sqlite3
+
+def main():
+    print("Hei! Velkommen til TrøndelagTeater")
+
+
+    while True: 
+        print("------------------------------")
+        print("Brukstilfelle 1 er fullført og databasen er satt opp")
+        print("Hvilke brukstilfellene ønsker du å kjøre?")
+        print("2. Oppdatere hvilke stoler som er solgt")
+        print("3. Kjøp 9 voksenbilletter til Størst av alt er kjæringheten, 3. februar")
+        print("4. List opp hvilke forestillinger, og salg etter bestemt dato")
+        print("5. Finne navn på skuespillere og hvilke roller og sykker de er med i")
+        print("6. Finner hvilke forestillinger som er solgt best, skriver de i synkende rekkefølge")
+        print("7. Finner hvilke andre skuespillere som har spilt i samme akt som gitt skuespiller")
+        print("8. Avslutter programmet")
+        print("------------------------------")
+
+        valg = input("Skriv inn tallet til brukertilfellene du vil teste.")
+
+        if valg == "2": 
+
+            con = sqlite3.connect("TeaterDatabase.db")
+            cursor = con.cursor()
+
+            cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
+            cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
+
+            con.commit()
+            con.close()
+
+            read_hovedscene("hovedscenen.txt")
+            read_gamlescenen("gamle-scene.txt")
+
+        # elif valg == "3": 
+        #     #kjører brukertilfelle_3.py
+        # elif valg == "4":
+        #     #kjører brukertilfelle_4.py
+        # elif valg == "5":
+        #     #kjører brukertilfelle_5.sql
+        # elif valg == "6":
+        #     #kjører brukertilfelle_6.sql
+        # elif valg == "7":
+        #     #kjører brukertilfelle_7.py
+        elif valg == "8":
+            break
+        else: 
+            break
+            
+main()
