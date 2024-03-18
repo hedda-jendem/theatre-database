@@ -160,7 +160,7 @@ create table Billett (
     foreign key (Pris) references Prisliste(Pris)
         on update cascade
         on delete cascade
-    foreign key (Stolnummer, Stolrad, Stolomrade) references Stol(Stolnummer, Stolrad, Stolomrade)
+    foreign key (Stolnummer, Stolrad, Stolomrade) references Stol(Stolnummer, Radnummer, Omradenavn)
         on update cascade
         on delete cascade
     foreign key (SalID) references TeaterSal(SalID)
@@ -175,15 +175,15 @@ create table Billett (
 CREATE TABLE Reservert (
     Stolnummer INT NOT NULL,
     Stolrad INT NOT NULL,
-    Stolområde VARCHAR(30) NOT NULL,
+    Stolomrade VARCHAR(30) NOT NULL,
     Sal INT NOT NULL,
     Billett INT NOT NULL,
     Ordre INT NOT NULL,
     ForestillingDato DATE NOT NULL,
     Stykke INT NOT NULL,
     Kunde INT NOT NULL,
-    PRIMARY KEY (Stolnummer, Stolrad, Stolområde, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde),
-    FOREIGN KEY (Stolnummer, Stolrad, Stolområde, Sal) REFERENCES Stol(Stolnummer, Radnummer, Område, SalID)
+    PRIMARY KEY (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde),
+    FOREIGN KEY (Stolnummer, Stolrad, Stolomrade, Sal) REFERENCES Stol(Stolnummer, Radnummer, Omradenavn, SalID)
         ON UPDATE CASCADE 
         ON DELETE CASCADE,
     FOREIGN KEY (Billett,Ordre) REFERENCES Billett(BillettID,OrdreID)
