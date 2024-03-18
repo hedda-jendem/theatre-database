@@ -1,6 +1,6 @@
 import sqlite3
 
-teller = 0
+teller = 1
 
 #Størst av alt er kjærligheten spilles i gamlescenen
 def read_gamlescenen(fil):
@@ -52,6 +52,7 @@ def read_gamlescenen(fil):
 def read_hovedscene(fil):
 
     global teller
+    StolnummerTeller = 525
 
     SalID = 1
     StykkeID = 1
@@ -76,23 +77,36 @@ def read_hovedscene(fil):
                     dato = word
                     #print(dato)  # print the date
         
-        elif line in Omrader.keys():
-            omradeNavn = line
-            Radnummer = Omrader[line]
-            #print(omradeNavn)
+        elif  "Parkett" in line:
+            omradeNavn = "Parkett"
+            Radnummer = 18
+        elif "Galleri" in line: 
+            omradeNavn = "Galleri"
+            Radnummer = 1
+        # elif line in Omrader.keys():
+        #     omradeNavn = line
+        #     Radnummer = Omrader[line]
+        #     #print(omradeNavn)
 
         else:
-            for Stolnummer, char in enumerate(line.strip(), start=1):  # start=1 for å få stolnummeret til å starte på 1
+            for char in reversed(line):
+
+                StolnummerTeller -= 1
+                print(StolnummerTeller, char)
+
                 if char == '1':
                     #cursor.execute('INSERT INTO Billett (Stolnummer, Radnummer, Omradenavn, SalID, OrdreID) VALUES (?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn, SalID, 1))
-                    cursor.execute('INSERT INTO Billett (BillettID, OrdreID, StykkeID, Pris, BillettType, Stolnummer, Stolrad, Stolomrade, SalID, ForestillingDato) VALUES (?,?,?,?,?,?,?,?,?,?)', (teller, 1, StykkeID, 450, 'Voksen', Stolnummer, Radnummer, omradeNavn.strip(), SalID, dato))
-                    cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
+                    cursor.execute('INSERT INTO Billett (BillettID, OrdreID, StykkeID, Pris, BillettType, Stolnummer, Stolrad, Stolomrade, SalID, ForestillingDato) VALUES (?,?,?,?,?,?,?,?,?,?)', (teller, 1, StykkeID, 450, 'Voksen', StolnummerTeller, Radnummer, omradeNavn.strip(), SalID, dato))
+                    cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (StolnummerTeller, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
                     teller += 1
-        
+
                     #print(f"Sete {Stolnummer} i rad {Radnummer} i området {omradeNavn} er tatt med {teller}")
                 elif char == 'x':
                     continue
-            Radnummer -= 1
+
+        
+            if omradeNavn == 'Parkett':
+                Radnummer -= 1   
 
     con.commit()
     con.close()       
