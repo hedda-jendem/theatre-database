@@ -23,7 +23,6 @@ read_SQL('TeaterTabellSetup.sql')
 read_SQL('DatabaseValues.sql')
 
 
-
 #Setter opp verdier for stoler 
 con = sqlite3.connect("TeaterDatabase.db")
 cursor = con.cursor()

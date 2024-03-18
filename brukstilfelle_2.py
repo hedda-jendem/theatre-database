@@ -14,6 +14,7 @@ con.close()
 def read_gamlescenen(fil):
 
     SalID = 2
+    StykkeID = 2
     Radnummer = None
     omradeNavn = None
 
@@ -45,8 +46,8 @@ def read_gamlescenen(fil):
             for Stolnummer, char in enumerate(line.strip(), start=1):  # start=1 for å få stolnummeret til å starte på 1
                 if char == '1':
                     #cursor.execute('INSERT INTO Billett (Stolnummer, Radnummer, Omradenavn, SalID, OrdreID) VALUES (?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn, SalID, 1))
-                    cursor.execute('INSERT INTO ReservertStol (BillettID, OrdreID, Stolnummer, Radnummer, Omradenavn, SalID) VALUES (?, ?, ?, ?, ?, ?) ', (teller, 1, Stolnummer, Radnummer, omradeNavn.strip(), SalID))
-                    cursor.execute('INSERT INTO ReservertForestilling(OrdreID,ForestillingDato,ForestillingKl) VALUES (?,?,?)', (1, dato, '18:30:00' ))
+                    cursor.execute('INSERT INTO Billett (BillettID, OrdreID, StykkeID, Pris, BillettType, Stolnummer, Stolrad, Stolomrade, SalID, ForestillingDato) VALUES (?,?,?,?,?,?,?,?,?,?)', (teller, 1, StykkeID, 450, 'Voksen', Stolnummer, Radnummer, omradeNavn.strip(), SalID, dato))
+                    cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
                     teller += 1
         
                     print(f"Sete {Stolnummer} i rad {Radnummer} i området {omradeNavn} er tatt med {teller}")
