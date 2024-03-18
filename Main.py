@@ -1,5 +1,6 @@
 from brukstilfelle_2 import read_hovedscene, read_gamlescenen
 from brukstilfelle_4 import checkPerformancesOnDate
+from brukstilfelle_6 import finnMestSolgteForestilling
 import sqlite3
 
 def main():
@@ -42,8 +43,8 @@ def main():
             checkPerformancesOnDate(dato)
         # elif valg == "5":
         #     #kjører brukertilfelle_5.sql
-        # elif valg == "6":
-        #     #kjører brukertilfelle_6.sql
+        elif valg == "6":
+            finnMestSolgteForestilling()
         # elif valg == "7":
         #     #kjører brukertilfelle_7.py
         elif valg == "8":
