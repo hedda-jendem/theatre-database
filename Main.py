@@ -1,4 +1,5 @@
 from brukstilfelle_2 import read_hovedscene, read_gamlescenen
+from brukstilfelle_4 import checkPerformancesOnDate
 import sqlite3
 
 def main():
@@ -18,7 +19,7 @@ def main():
         print("8. Avslutter programmet")
         print("------------------------------")
 
-        valg = input("Skriv inn tallet til brukertilfellene du vil teste.")
+        valg = input("Skriv inn tallet til brukertilfellene du vil teste:  ")
 
         if valg == "2": 
 
@@ -36,8 +37,9 @@ def main():
 
         # elif valg == "3": 
         #     #kjører brukertilfelle_3.py
-        # elif valg == "4":
-        #     #kjører brukertilfelle_4.py
+        elif valg == "4":
+            dato = input("Skriv inn en dato for å se hvilke forestillinger som går og antall billetter som er solgt:  ")
+            checkPerformancesOnDate(dato)
         # elif valg == "5":
         #     #kjører brukertilfelle_5.sql
         # elif valg == "6":

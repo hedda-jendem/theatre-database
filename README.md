@@ -7,6 +7,11 @@
 3. Kjør filen `Main.py`. Dette vil starte programmet.
 4. Følg deretter instruksjonene i terminalen.
 
+**Merk:**
+
+- Alle datoer for forestillinger må skrives på formen yyyy-mm-dd
+- Du kan ikke starte med å skrive mellomrom i terminalen når du velger hvilke deler av programmet du vil kjøre
+
 ## Endringer i databasen gjort etter DB1:
 
 -**Klokkeslett**: Dropper klokkeslett i databasen siden alle forestillinger som viser samme stykke starter samtidig.
