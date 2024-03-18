@@ -39,7 +39,7 @@ cursor.execute("DELETE FROM Stol WHERE Stolnummer IN (467,468,469,470,495,496,49
 
 #Hovedscenen galleri
 for i in range(505, 525):
-    cursor.execute('INSERT INTO Stol (Stolnummer,Radnummer,Omradenavn,SalID) VALUES (?,?,?,?)', (i,1,'Parkett',1))
+    cursor.execute('INSERT INTO Stol (Stolnummer,Radnummer,Omradenavn,SalID) VALUES (?,?,?,?)', (i,1,'Galleri',1))
 #TODO SKAL VI HA MED ØVRE OG NEDRE????  
 
 
