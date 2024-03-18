@@ -9,8 +9,9 @@
 
 **Merk:**
 
-- Alle datoer for forestillinger må skrives på formen yyyy-mm-dd
-- Du kan ikke starte med å skrive mellomrom i terminalen når du velger hvilke deler av programmet du vil kjøre
+- Alle datoer for forestillinger må skrives på formen yyyy-mm-dd.
+- Du kan ikke starte med å skrive mellomrom i terminalen når du velger hvilke deler av programmet du vil kjøre.
+- Hvis du skal kjøre brukertilfelle 4 må brukertilfelle 2 være kjørt først for å få riktig antall solgte billetter til forestillingene.
 
 ## Endringer i databasen gjort etter DB1:
 
