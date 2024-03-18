@@ -58,3 +58,7 @@ def read_gamlescenen(fil):
  
 
 read_gamlescenen('gamle-scene.txt')
+
+#Oppgaven vil vel at dette skal gjøres for begge salene, både gamle scene og hovedscenen? 
+#Fungerer denne funksjonen kun til gamle scene? Skulle vi ha laget den slik at det fungerer for begge salene?
+#Eller skal vi ha to ulike funksjoner? 
