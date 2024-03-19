@@ -53,15 +53,6 @@ for i in range(1, 19):
 for i in range(1, 18):
     cursor.execute('INSERT INTO Stol (Stolnummer,Radnummer,Omradenavn,SalID) VALUES (?,?,?,?)', (i,3,'Galleri',2))
 
-#Gample scene parkett
-
-# # Antallet stoler per rad er indikert i raden under
-# stoler_rad = [18, 16, 17, 18, 18, 17, 18, 17, 17, 14]
-# stol_nummer = 1  # Starter stolnummereringen for parkett
-# for rad in range(1, 11):  # 10 rader totalt
-#     for stol in range(1, stoler_rad[rad-1] + 1):
-#         cursor.execute('INSERT INTO Stol (Stolnummer,Radnummer,Omradenavn,SalID) VALUES (?,?,?,?)', (stol_nummer, rad, 'Parkett', 2))  
-#         stol_nummer += 1
 
 #Gamle scenen parkett
 for i in range(1, 19):
