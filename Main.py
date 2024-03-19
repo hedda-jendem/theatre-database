@@ -1,5 +1,6 @@
 from brukstilfelle_2 import read_hovedscene, read_gamlescenen
 from brukstilfelle_4 import sjekkForestillingPaaDato
+from brukstilfelle_5 import finnNavn
 from brukstilfelle_6 import finnMestSolgteForestilling
 from brukstilfelle_7 import finnSkuespillerISammeAkt
 import sqlite3
@@ -31,8 +32,8 @@ def main():
         elif valg == "4":
             dato = input("Skriv inn en dato for å se hvilke forestillinger som går og antall billetter som er solgt:  ")
             sjekkForestillingPaaDato(dato)
-        # elif valg == "5":
-        #     #kjører brukertilfelle_5.sql
+        elif valg == "5":
+            finnNavn()
         elif valg == "6":
             finnMestSolgteForestilling()
         elif valg == "7":
