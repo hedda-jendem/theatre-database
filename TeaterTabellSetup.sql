@@ -78,6 +78,7 @@ create table Skuespiller (
 create table RolleBesetning (
     Skuespiller int not null,
     Rolle int not null,
+    StykkeID int not null,
     primary key (Skuespiller, Rolle),
     foreign key (Skuespiller) references Skuespiller(SkuespillerID)
     on update no action
@@ -85,6 +86,9 @@ create table RolleBesetning (
     foreign key (Rolle) references Rolle(RolleID)
     on update no action
     on delete no action
+    foreign key (StykkeID) references RolleIAkt(StykkeID)
+    on update cascade
+    on delete cascade 
 );
 
 -- Oppretter Prisliste tabellen

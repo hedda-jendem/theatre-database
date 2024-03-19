@@ -101,34 +101,34 @@ INSERT INTO Rolle (RolleID, Navn) VALUES
 (26, 'Åsmund Flaten');
 
 -- RolleBesetning for Kongsemnene
-INSERT INTO RolleBesetning (Skuespiller, Rolle) VALUES 
-(1, 1),  -- Arturo Scotti som Haakon Haakonssønn
-(2, 2),  -- Ingunn Beate Strige Øyen som Inga fra Varteig
-(3, 3),  -- Hans Petter Nilsen som Skule Jarl
-(4, 4),  -- Madeleine Brandtzæg Nilsen som Fru Ragnhild
-(5, 5),  -- Synnøve Fossum Eriksen som Margrete
-(6, 6),  -- Emma Caroline Deichmann som Sigrid
-(6, 7),  -- Emma Caroline Deichmann som Ingebjørg (Emma spiller både Sigrid og Ingebjørg)
-(7, 8),  -- Thomas Jensen Takyi som Biskop Nikolas
-(8, 9),  -- Per Bogstad Gulliksen som Gregorius Jonssonn
-(9, 10), -- Isak Holmen Sørensen som Paal Flida
-(9, 11), -- Isak Holmen Sørensen som Trønder 1 (Isak spiller både Paal Flida og Trønder 1)
-(10, 12),-- Fabian Heidelberg Lunde som Baard Bratte
-(10, 13),-- Fabian Heidelberg Lunde som Trønder 2 (Fabian spiller både Baard Bratte og Trønder 2)
-(11, 14),-- Emil Olafsson som Jatgeir Skald
-(11, 15),-- Emil Olafsson som Dagfinn Bonde (Emil spiller både Jatgeir Skald og Dagfinn Bonde)
-(12, 16);-- Snorre Ryen Tøndel som Peter
+INSERT INTO RolleBesetning (Skuespiller, Rolle, StykkeID) VALUES 
+(1, 1, 1),  -- Arturo Scotti som Haakon Haakonssønn
+(2, 2, 1),  -- Ingunn Beate Strige Øyen som Inga fra Varteig
+(3, 3, 1),  -- Hans Petter Nilsen som Skule Jarl
+(4, 4, 1),  -- Madeleine Brandtzæg Nilsen som Fru Ragnhild
+(5, 5, 1),  -- Synnøve Fossum Eriksen som Margrete
+(6, 6, 1),  -- Emma Caroline Deichmann som Sigrid
+(6, 7, 1),  -- Emma Caroline Deichmann som Ingebjørg (Emma spiller både Sigrid og Ingebjørg)
+(7, 8, 1),  -- Thomas Jensen Takyi som Biskop Nikolas
+(8, 9, 1),  -- Per Bogstad Gulliksen som Gregorius Jonssonn
+(9, 10, 1), -- Isak Holmen Sørensen som Paal Flida
+(9, 11, 1), -- Isak Holmen Sørensen som Trønder 1 (Isak spiller både Paal Flida og Trønder 1)
+(10, 12, 1),-- Fabian Heidelberg Lunde som Baard Bratte
+(10, 13, 1),-- Fabian Heidelberg Lunde som Trønder 2 (Fabian spiller både Baard Bratte og Trønder 2)
+(11, 14, 1),-- Emil Olafsson som Jatgeir Skald
+(11, 15, 1),-- Emil Olafsson som Dagfinn Bonde (Emil spiller både Jatgeir Skald og Dagfinn Bonde)
+(12, 16, 1);-- Snorre Ryen Tøndel som Peter
 
 
 -- RolleBesetning for Størst av alt er kjærligheten
-INSERT INTO RolleBesetning (Skuespiller, Rolle) VALUES 
-(13, 20), -- Sunniva Du Mond Nordal spiller seg selv
-(14, 21), -- Jo Saberniak spiller seg selv
-(15, 22), -- Marte M. Steinholt spiller seg selv
-(16, 23), -- Tor Ivar Hagen spiller seg selv
-(17, 24), -- Trond-Ove Skrødal spiller seg selv
-(18, 25), -- Natalie Grøndahl Tangen spiller seg selv
-(19, 26); -- Åsmund Flaten spiller seg selv
+INSERT INTO RolleBesetning (Skuespiller, Rolle, StykkeID) VALUES 
+(13, 20, 2), -- Sunniva Du Mond Nordal spiller seg selv
+(14, 21, 2), -- Jo Saberniak spiller seg selv
+(15, 22, 2), -- Marte M. Steinholt spiller seg selv
+(16, 23, 2), -- Tor Ivar Hagen spiller seg selv
+(17, 24, 2), -- Trond-Ove Skrødal spiller seg selv
+(18, 25, 2), -- Natalie Grøndahl Tangen spiller seg selv
+(19, 26, 2); -- Åsmund Flaten spiller seg selv
 
 -- Legger til akter for Kongsemnene
 INSERT INTO Akt (AktNr, Navn, Stykke) VALUES 
@@ -138,6 +138,7 @@ INSERT INTO Akt (AktNr, Navn, Stykke) VALUES
 (4, 'Akt 4', 1),
 (5, 'Akt 5', 1);
 
+-- Legger til akter for Størst av alt er kjærligheten
 INSERT INTO Akt (AktNr, Navn, Stykke) VALUES 
 (1, 'Akt 1', 2);
 
