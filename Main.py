@@ -24,19 +24,8 @@ def main():
         valg = input("Skriv inn tallet til brukertilfellet du vil teste:  ")
 
         if valg == "2": 
-
-            con = sqlite3.connect("TeaterDatabase.db")
-            cursor = con.cursor()
-
-            cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
-            cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
-
-            con.commit()
-            con.close()
-
             read_hovedscene("hovedscenen.txt")
             read_gamlescenen("gamle-scene.txt")
-
         # elif valg == "3": 
         #     #kjører brukertilfelle_3.py
         elif valg == "4":

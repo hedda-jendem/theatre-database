@@ -5,6 +5,12 @@ teller = 1
 #Størst av alt er kjærligheten spilles i gamlescenen
 def read_gamlescenen(fil):
 
+    con = sqlite3.connect("TeaterDatabase.db")
+    cursor = con.cursor()
+
+    cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
+    cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
+
     global teller
 
     SalID = 2
@@ -49,6 +55,12 @@ def read_gamlescenen(fil):
 
 #Kongsemnen spilles i hovedscenen
 def read_hovedscene(fil):
+
+    con = sqlite3.connect("TeaterDatabase.db")
+    cursor = con.cursor()
+
+    cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
+    cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
 
     global teller
     StolnummerTeller = 525
