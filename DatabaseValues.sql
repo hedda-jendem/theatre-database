@@ -138,88 +138,122 @@ INSERT INTO Akt (AktNr, Navn, Stykke) VALUES
 (4, 'Akt 4', 1),
 (5, 'Akt 5', 1);
 
+INSERT INTO Akt (AktNr, Navn, Stykke) VALUES 
+(1, 'Akt 1', 2),
+
 -- Aktene for Håkon Håkonsson i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(1, 1, 1),
+(1, 2, 1),
+(1, 3, 1),
+(1, 4, 1),
+(1, 5, 1);
 
 -- Aktene for Dagfinn Bonde i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(15, 1),
-(15, 2),
-(15, 3),
-(15, 4),
-(15, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(15, 1, 1),
+(15, 2, 1),
+(15, 3, 1),
+(15, 4, 1),
+(15, 5, 1);
 
 -- Aktene for Jatgeir Skald i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(14, 4);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(14, 4, 1);
 
 -- Aktene for Sigrid i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(6, 1),
-(6, 2),
-(6, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(6, 1, 1),
+(6, 2, 1),
+(6, 5, 1);
 
 -- Aktene for Ingebjørg i Kongsemnene (korrigert fra 'Ingeborg')
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(7, 4);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(7, 4, 1);
 
 -- Aktene for Skule Jarl i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(3, 1),
-(3, 2),
-(3, 3),
-(3, 4),
-(3, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(3, 1, 1),
+(3, 2, 1),
+(3, 3, 1),
+(3, 4, 1),
+(3, 5, 1);
 
 -- Aktene for Inga fra Varteig i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(2, 4);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(2, 4, 1);
 
 -- Aktene for Paal Flida i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(10, 1),
-(10, 2),
-(10, 3),
-(10, 4),
-(10, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(10, 1, 1),
+(10, 2, 1),
+(10, 3, 1),
+(10, 4, 1),
+(10, 5, 1);
 
 -- Aktene for Fru Ragnhild i Kongsemnene 
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(4, 1),
-(4, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(4, 1, 1),
+(4, 5, 1);
 
 -- Aktene for Gregorius Jonsson i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(9, 1),
-(9, 2),
-(9, 3),
-(9, 4),
-(9, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(9, 1, 1),
+(9, 2, 1),
+(9, 3, 1),
+(9, 4, 1),
+(9, 5, 1);
 
 -- Aktene for Margrete i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(5, 1),
-(5, 2),
-(5, 3),
-(5, 4),
-(5, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(5, 1, 1),
+(5, 2, 1),
+(5, 3, 1),
+(5, 4, 1),
+(5, 5, 1);
 
 -- Aktene for Biskop Nikolas i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(8, 1),
-(8, 2),
-(8, 3);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(8, 1, 1),
+(8, 2, 1),
+(8, 3, 1);
 
 -- Aktene for Peter i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt) VALUES 
-(16, 3),
-(16, 4),
-(16, 5);
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(16, 3, 1),
+(16, 4, 1),
+(16, 5, 1);
+
+-- Aktene for Sunniva Du Mond Nordal i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(20, 1, 2);
+
+-- Aktene for Jo Saberniak i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(21, 1, 2);
+
+-- Aktene for Marte M. Steinholt i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(22, 1, 2);
+
+-- Aktene for Tor Ivar Hagen i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(23, 1, 2);
+
+-- Aktene for Trond-Ove Skrødal i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(24, 1, 2);
+
+-- Aktene for Natalie Grøndahl Tangen i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(25, 1, 2);
+
+-- Aktene for Åsmund Flaten i Størst av alt er kjærligheten 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
+(26, 1, 2);
+
+
+
 
 -- Legger til personer i Person-tabellen som jobber ved Kongsemnene
 INSERT INTO Person (PersonID, Navn, Epost, AnsattStatus) VALUES 

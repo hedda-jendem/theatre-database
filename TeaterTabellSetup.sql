@@ -57,11 +57,12 @@ create table Rolle (
 create table RolleIAkt (
     Akt int not null,
     Rolle int not null,
+    StykkeID int not null
     primary key (Akt, Rolle),
     foreign key (Rolle) references Rolle(RolleID)
     on update cascade
     on delete cascade,
-    foreign key (Akt) references Akt(AktNr)
+    foreign key (Akt, StykkeID) references Akt(AktNr, StykkeID)
     on update cascade
     on delete cascade 
 );
