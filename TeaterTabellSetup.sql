@@ -39,9 +39,10 @@ create table Stykke (
 
 -- Oppretter Akt tabellen
 create table Akt (
-    AktNr int primary key,
+    AktNr int,
     Navn varchar(30) not null,
     Stykke int not null,
+    primary key (AktNr,Stykke),
     foreign key (Stykke) references Stykke(StykkeID)
     on update no action
     on delete cascade --hvis et stykke slettes vil alle tilknyttede Akt-rader også bli slettet
@@ -57,7 +58,7 @@ create table Rolle (
 create table RolleIAkt (
     Akt int not null,
     Rolle int not null,
-    StykkeID int not null
+    StykkeID int not null,
     primary key (Akt, Rolle),
     foreign key (Rolle) references Rolle(RolleID)
     on update cascade

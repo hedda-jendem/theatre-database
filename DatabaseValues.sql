@@ -139,7 +139,7 @@ INSERT INTO Akt (AktNr, Navn, Stykke) VALUES
 (5, 'Akt 5', 1);
 
 INSERT INTO Akt (AktNr, Navn, Stykke) VALUES 
-(1, 'Akt 1', 2),
+(1, 'Akt 1', 2);
 
 -- Aktene for Håkon Håkonsson i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
