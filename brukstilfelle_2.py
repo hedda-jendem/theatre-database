@@ -28,7 +28,6 @@ def read_gamlescenen(fil):
             for word in words:
                 if len(word) == 10 and word[4] == "-" and word[7] == "-":
                     dato = word
-                    #print(dato)  # print the date
         
         elif line in Omrader.keys():
             omradeNavn = line
@@ -75,7 +74,6 @@ def read_hovedscene(fil):
             for word in words:
                 if len(word) == 10 and word[4] == "-" and word[7] == "-":
                     dato = word
-                    #print(dato)  # print the date
         
         elif  "Parkett" in line:
             omradeNavn = "Parkett"
@@ -83,16 +81,11 @@ def read_hovedscene(fil):
         elif "Galleri" in line: 
             omradeNavn = "Galleri"
             Radnummer = 1
-        # elif line in Omrader.keys():
-        #     omradeNavn = line
-        #     Radnummer = Omrader[line]
-        #     #print(omradeNavn)
 
         else:
             for char in reversed(line):
 
                 StolnummerTeller -= 1
-                print(StolnummerTeller, char)
 
                 if char == '1':
                     #cursor.execute('INSERT INTO Billett (Stolnummer, Radnummer, Omradenavn, SalID, OrdreID) VALUES (?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn, SalID, 1))

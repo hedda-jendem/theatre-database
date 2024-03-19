@@ -1,6 +1,6 @@
 import sqlite3
 
-def checkPerformancesOnDate(dato):
+def sjekkForestillingPaaDato(dato):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
@@ -9,11 +9,11 @@ def checkPerformancesOnDate(dato):
                    JOIN Stykke on Forestilling.Stykke = Stykke.StykkeID
                    LEFT JOIN Billett on Forestilling.Dato = Billett.ForestillingDato AND Forestilling.Stykke = Billett.StykkeID
                    Where Forestilling.Dato = ?
-                   GROUP BY Forestilling.Dato, Stykke.Navn""", (dato,))
+                   GROUP BY Forestilling.Dato, Stykke.Navn""", (dato))
 
     rader = cursor.fetchall()
     print("Forestillinger på dato ", dato)
     print(rader)
     con.close()
 
-# checkPerformancesOnDate('2024-02-03')
+# sjekkForestillingPaaDato('2024-02-03')

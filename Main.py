@@ -1,6 +1,7 @@
 from brukstilfelle_2 import read_hovedscene, read_gamlescenen
-from brukstilfelle_4 import checkPerformancesOnDate
+from brukstilfelle_4 import sjekkForestillingPaaDato
 from brukstilfelle_6 import finnMestSolgteForestilling
+from brukstilfelle_7 import finnSkuespillerISammeAkt
 import sqlite3
 
 def main():
@@ -8,7 +9,7 @@ def main():
 
 
     while True: 
-        print("------------------------------")
+        print("-------------------------------------------------------------")
         print("Brukstilfelle 1 er fullført og databasen er satt opp")
         print("Hvilke brukstilfellene ønsker du å kjøre?")
         print("2. Oppdatere hvilke stoler som er solgt")
@@ -18,7 +19,7 @@ def main():
         print("6. Finner hvilke forestillinger som er solgt best, skriver de i synkende rekkefølge")
         print("7. Finner hvilke andre skuespillere som har spilt i samme akt som gitt skuespiller")
         print("8. Avslutter programmet")
-        print("------------------------------")
+        print("-------------------------------------------------------------")
 
         valg = input("Skriv inn tallet til brukertilfellene du vil teste:  ")
 
@@ -40,13 +41,14 @@ def main():
         #     #kjører brukertilfelle_3.py
         elif valg == "4":
             dato = input("Skriv inn en dato for å se hvilke forestillinger som går og antall billetter som er solgt:  ")
-            checkPerformancesOnDate(dato)
+            sjekkForestillingPaaDato(dato)
         # elif valg == "5":
         #     #kjører brukertilfelle_5.sql
         elif valg == "6":
             finnMestSolgteForestilling()
-        # elif valg == "7":
-        #     #kjører brukertilfelle_7.py
+        elif valg == "7":
+            skuespiller = input("Skriv inn navnet på en skuespiller for å finne andre skuespillere hvor de har spilt i samme akt:  ")
+            finnSkuespillerISammeAkt(skuespiller)
         elif valg == "8":
             break
         else: 
