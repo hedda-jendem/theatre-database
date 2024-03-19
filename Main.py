@@ -6,22 +6,22 @@ import sqlite3
 
 def main():
     print("Hei! Velkommen til TrøndelagTeater")
+    print("Hvis du har fulgt README vil brukstilfelle 1 er fullført og databasen er satt opp")
 
 
     while True: 
         print("-------------------------------------------------------------")
-        print("Brukstilfelle 1 er fullført og databasen er satt opp")
-        print("Hvilke brukstilfellene ønsker du å kjøre?")
+        print("Hvilke brukstilfeller ønsker du å kjøre?")
         print("2. Oppdatere hvilke stoler som er solgt")
         print("3. Kjøp 9 voksenbilletter til Størst av alt er kjæringheten, 3. februar")
         print("4. List opp hvilke forestillinger, og salg etter bestemt dato")
         print("5. Finne navn på skuespillere og hvilke roller og sykker de er med i")
         print("6. Finner hvilke forestillinger som er solgt best, skriver de i synkende rekkefølge")
         print("7. Finner hvilke andre skuespillere som har spilt i samme akt som gitt skuespiller")
-        print("8. Avslutter programmet")
+        print("Trykk hvilken som helst annen knapp for å avslutte programmet")
         print("-------------------------------------------------------------")
 
-        valg = input("Skriv inn tallet til brukertilfellene du vil teste:  ")
+        valg = input("Skriv inn tallet til brukertilfellet du vil teste:  ")
 
         if valg == "2": 
 

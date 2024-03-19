@@ -9,7 +9,7 @@ def sjekkForestillingPaaDato(dato):
                    JOIN Stykke on Forestilling.Stykke = Stykke.StykkeID
                    LEFT JOIN Billett on Forestilling.Dato = Billett.ForestillingDato AND Forestilling.Stykke = Billett.StykkeID
                    Where Forestilling.Dato = ?
-                   GROUP BY Forestilling.Dato, Stykke.Navn""", (dato))
+                   GROUP BY Forestilling.Dato, Stykke.Navn""", (dato,))
 
     rader = cursor.fetchall()
     print("Forestillinger på dato ", dato)
