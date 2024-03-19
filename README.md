@@ -18,7 +18,9 @@
 
 -**Klokkeslett**: Dropper klokkeslett i databasen siden alle forestillinger som viser samme stykke starter samtidig.
 
--**RolleiAkt**-: Har rettet opp en feil og lagt til AktID til forskjell fra innlevering 1. Dette er for å kunne identifisere forskjellen på de to forskjellige stykkene. s
+-**RolleiAkt**-: Har rettet opp en feil og lagt til AktID til forskjell fra innlevering 1. Dette er for å kunne identifisere forskjellen på de to forskjellige stykkene. 
+
+-**RolleBesetning**:Har lagt til StykkeID for å lettere kunne hente ut data. Vi kunne klart oss uten og hentet ut stykke med unødvendig kompliserte JOIN-setninger i SQL-spørringen, men på den måten ble spørringen mer intuitiv. 
 
 -**Organisering av billettabeller**: Vi fjerner tabellene BillettType og BillettForestilling, til fordel for en enkel Billett-tabell. Tidligere var begge tabellene, BillettType og BillettForestilling, på 4. NF. Etter nærmere arbeid med databasen har vi innsett at det er mindre fordelaktig å ha to tabeller på 4. NF, fremfor én tabell som gjør databasen enklere å bruke.
 
