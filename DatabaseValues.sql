@@ -286,5 +286,16 @@ INSERT INTO Oppgave (OppgaveNr, Titel, Beskrivelse, Stykke, PersonID) VALUES
 (8, 'Musikalsk ansvarlig', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Gaute Tønder')),
 (9, 'Dramaturg', null, 2, (SELECT PersonID FROM Person WHERE Navn = 'Kristoffer Spender'));
 
+-- Legger til Standard kunder som bruker i brukstilfell 2 og 3 
+INSERT INTO Kunde (KundeID, Navn) VALUES 
+(1, 'Standarbruker'),
+(2, 'Sensorbruker');
+
+-- 
+INSERT INTO Ordre (OrdreID, Kunde) VALUES 
+(1, 1),
+(2, 1);
+
+
 
 

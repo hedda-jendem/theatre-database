@@ -8,8 +8,8 @@ def read_gamlescenen(fil):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
-    cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
-    cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
+    #cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
+    #cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
 
     global teller
 
@@ -59,8 +59,8 @@ def read_hovedscene(fil):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
-    cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
-    cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
+    #cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
+    #cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
 
     global teller
     StolnummerTeller = 525
