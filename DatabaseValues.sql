@@ -150,17 +150,30 @@ INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
 (1, 4, 1),
 (1, 5, 1);
 
--- Aktene for Dagfinn Bonde i Kongsemnene
+-- Aktene for Inga fra Varteig i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(15, 1, 1),
-(15, 2, 1),
-(15, 3, 1),
-(15, 4, 1),
-(15, 5, 1);
+(2, 4, 1);
 
--- Aktene for Jatgeir Skald i Kongsemnene
+-- Aktene for Skule Jarl i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(14, 4, 1);
+(3, 1, 1),
+(3, 2, 1),
+(3, 3, 1),
+(3, 4, 1),
+(3, 5, 1);
+
+-- Aktene for Fru Ragnhild i Kongsemnene 
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(4, 1, 1),
+(4, 5, 1);
+
+-- Aktene for Margrete i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(5, 1, 1),
+(5, 2, 1),
+(5, 3, 1),
+(5, 4, 1),
+(5, 5, 1);
 
 -- Aktene for Sigrid i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
@@ -172,30 +185,11 @@ INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
 (7, 4, 1);
 
--- Aktene for Skule Jarl i Kongsemnene
+-- Aktene for Biskop Nikolas i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(3, 1, 1),
-(3, 2, 1),
-(3, 3, 1),
-(3, 4, 1),
-(3, 5, 1);
-
--- Aktene for Inga fra Varteig i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(2, 4, 1);
-
--- Aktene for Paal Flida i Kongsemnene
-INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(10, 1, 1),
-(10, 2, 1),
-(10, 3, 1),
-(10, 4, 1),
-(10, 5, 1);
-
--- Aktene for Fru Ragnhild i Kongsemnene 
-INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(4, 1, 1),
-(4, 5, 1);
+(8, 1, 1),
+(8, 2, 1),
+(8, 3, 1);
 
 -- Aktene for Gregorius Jonsson i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
@@ -205,19 +199,49 @@ INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES
 (9, 4, 1),
 (9, 5, 1);
 
--- Aktene for Margrete i Kongsemnene
+-- Aktene for Paal Flida i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(5, 1, 1),
-(5, 2, 1),
-(5, 3, 1),
-(5, 4, 1),
-(5, 5, 1);
+(10, 1, 1),
+(10, 2, 1),
+(10, 3, 1),
+(10, 4, 1),
+(10, 5, 1);
 
--- Aktene for Biskop Nikolas i Kongsemnene
+-- Aktene for Trønder 1 i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
-(8, 1, 1),
-(8, 2, 1),
-(8, 3, 1);
+(11, 1, 1),
+(11, 2, 1),
+(11, 3, 1),
+(11, 4, 1),
+(11, 5, 1);
+
+-- Aktene for Baard Bratte i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(12, 1, 1),
+(12, 2, 1),
+(12, 3, 1),
+(12, 4, 1),
+(12, 5, 1);
+
+-- Aktene for Trønder 2 i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(13, 1, 1),
+(13, 2, 1),
+(13, 3, 1),
+(13, 4, 1),
+(13, 5, 1);
+
+-- Aktene for Jatgeir Skald i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(14, 4, 1);
+
+-- Aktene for Dagfinn Bonde i Kongsemnene
+INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 
+(15, 1, 1),
+(15, 2, 1),
+(15, 3, 1),
+(15, 4, 1),
+(15, 5, 1);
 
 -- Aktene for Peter i Kongsemnene
 INSERT INTO RolleIAkt (Rolle, Akt, StykkeID) VALUES 

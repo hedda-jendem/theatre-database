@@ -23,6 +23,7 @@
 - Du kan ikke starte med å skrive mellomrom i terminalen når du velger hvilke deler av programmet du vil kjøre.
 - Hvis du skal kjøre brukertilfelle 4 må brukertilfelle 2 være kjørt først for å få riktig antall solgte billetter til forestillingene.
 - I brukstillfelle_2.py er vi klare over at read_hovedscene() leser feil stolernummer i galleri, men da alle disse var ledige (0) har det ikke noe å si
+- Filen `tekstligeResultater.txt` viser hvordan en output kan være når man gjennomfører brukerhistoriens spørringer.
 
 ## Endringer i databasen gjort etter DB1:
 
