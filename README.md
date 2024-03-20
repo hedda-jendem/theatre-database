@@ -24,6 +24,7 @@
 - Hvis du skal kjøre brukertilfelle 4 må brukertilfelle 2 være kjørt først for å få riktig antall solgte billetter til forestillingene.
 - I brukstillfelle_2.py er vi klare over at read_hovedscene() leser feil stolernummer i galleri, men da alle disse var ledige (0) har det ikke noe å si
 - Filen `tekstligeResultater.txt` viser hvordan en output kan være når man gjennomfører brukerhistoriens spørringer.
+- Trønder 1, Trønder 2 og Baard Bratte har blitt lagt til som skuespiller i alle aktene. Disse rollene var oppgitt på hjemmesiden til TrøndelagTeater, men ikke i tabellen vi fikk i prosjektoppgaven.
 
 ## Endringer i databasen gjort etter DB1:
 
