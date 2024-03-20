@@ -48,7 +48,9 @@ def read_gamlescenen(fil):
             Radnummer -= 1
 
     con.commit()
-    con.close()       
+    con.close() 
+
+    print("Gamlescenen er ferdig lest")     
 
 #Kongsemnen spilles i hovedscenen
 def read_hovedscene(fil):
@@ -107,4 +109,6 @@ def read_hovedscene(fil):
                 Radnummer -= 1   
 
     con.commit()
-    con.close()       
+    con.close() 
+
+    print("Hovedscenen er ferdig lest")      
