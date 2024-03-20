@@ -128,15 +128,18 @@ Trykk hvilken som helst annen knapp for å avslutte programmet
 Skriv inn tallet til brukertilfellet du vil teste:  7
 Skriv inn navnet på en skuespiller for å finne andre skuespillere hvor de har spilt i samme akt:  Emil Olafsson
 
-Her kommer alle skuespillere som har spilt med Emil Olafsson, og hvilket skuespill det skjedde i
-Emil Olafsson spilte med Arturo Scotti i Kongsemnene
+Her kommer alle skuespillere som har spilt med Emil Olafsson, og hvilket skuespill det skjedde i:
+Emil Olafsson spilte med Fabian Heidelberg Lunde i Kongsemnene
 Emil Olafsson spilte med Ingunn Beate Strige Øyen i Kongsemnene
 Emil Olafsson spilte med Hans Petter Nilsen i Kongsemnene
 Emil Olafsson spilte med Synnøve Fossum Eriksen i Kongsemnene
-Emil Olafsson spilte med Emma Caroline Deichmann i Kongsemnene
-Emil Olafsson spilte med Per Bogstad Gulliksen i Kongsemnene
+Emil Olafsson spilte med Madeleine Brandtzæg Nilsen i Kongsemnene
+Emil Olafsson spilte med Arturo Scotti i Kongsemnene
 Emil Olafsson spilte med Isak Holmen Sørensen i Kongsemnene
+Emil Olafsson spilte med Per Bogstad Gulliksen i Kongsemnene
 Emil Olafsson spilte med Snorre Ryen Tøndel i Kongsemnene
+Emil Olafsson spilte med Emma Caroline Deichmann i Kongsemnene
+Emil Olafsson spilte med Thomas Jensen Takyi i Kongsemnene
 -------------------------------------------------------------
 Hvilke brukstilfeller ønsker du å kjøre?
 2. Oppdatere hvilke stoler som er solgt
