@@ -13,5 +13,8 @@ def finnMestSolgteForestilling():
     
     rader = cursor.fetchall()
     print("Alle forestillinger sortert i synkende rekkefølge etter salg")
-    print(rader)
+    for rad in rader:
+        stykkeNavn, dato, solgteBilletter = rad
+        print(f"Stykke: {stykkeNavn}, Dato: {dato}, Solgte billetter: {solgteBilletter}")
+    
     con.close()
