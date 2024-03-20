@@ -3,10 +3,18 @@
 ## Hvordan bruke databasen:
 
 1. Sørg for at du er i mappen databaser-db2.
-2. Kjør filen `SetUpDatabase.py`. Dette vil sette opp databasen med all nødvendig informasjon.  
-   Dette gjøres ved å skrive `Python3 SetUpDatabase.py` i terminalen.
-3. Kjør filen `Main.py`. Dette vil starte programmet.  
-   Dette gjøres ved å skrive `Python3 Main.py` i terminalen.
+2. Kjør filen `SetUpDatabase.py`. Dette vil sette opp databasen med all nødvendig informasjon.
+
+   ```
+    Python3 SetUpDatabase.py
+   ```
+
+3. Kjør filen `Main.py`. Dette vil starte programmet.
+
+   ```
+   Python3 Main.py
+   ```
+
 4. Følg deretter instruksjonene i terminalen.
 
 **Merk:**
