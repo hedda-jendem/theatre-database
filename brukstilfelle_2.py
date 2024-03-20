@@ -8,9 +8,6 @@ def read_gamlescenen(fil):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
-    #cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
-    #cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
-
     global teller
 
     SalID = 2
@@ -59,9 +56,6 @@ def read_hovedscene(fil):
     con = sqlite3.connect("TeaterDatabase.db")
     cursor = con.cursor()
 
-    #cursor.execute('INSERT INTO Kunde (KundeID, Navn) VALUES (?,?)', (1, "Standarbruker"))
-    #cursor.execute('INSERT INTO Ordre (OrdreID, KundeID) VALUES (?,?)', (1, 1))
-
     global teller
     StolnummerTeller = 525
 
@@ -100,7 +94,6 @@ def read_hovedscene(fil):
                 StolnummerTeller -= 1
 
                 if char == '1':
-                    #cursor.execute('INSERT INTO Billett (Stolnummer, Radnummer, Omradenavn, SalID, OrdreID) VALUES (?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn, SalID, 1))
                     cursor.execute('INSERT INTO Billett (BillettID, OrdreID, StykkeID, Pris, BillettType, Stolnummer, Stolrad, Stolomrade, SalID, ForestillingDato) VALUES (?,?,?,?,?,?,?,?,?,?)', (teller, 1, StykkeID, 450, 'Voksen', StolnummerTeller, Radnummer, omradeNavn.strip(), SalID, dato))
                     cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (StolnummerTeller, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
                     teller += 1
