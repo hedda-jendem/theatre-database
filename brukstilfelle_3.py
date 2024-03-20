@@ -42,7 +42,9 @@ def kjop_billetter(BillettType, antallBilletter, ForestillingDato, StykkeID, Kun
     TotalPris = regne_pris(BillettType, antallBilletter, StykkeID)
 
     print(f"Du har nå kjøpt {antallBilletter} billetter til forestilling {StykkeID} den {ForestillingDato} til en totalpris av {TotalPris} kr.")
-    print(f"Dette er stolene du har kjøpt: {stolerRad}")
+    print(f"Dette er stolene du har kjøpt:")
+    for stol in stolerRad:
+        print(f"Stolnummer: {stol[0]}, Radnummer: {stol[1]}, Område: {stol[2]}")
 
 def ledige_stoler(ForestillingDato, StykkeID):
     con = sqlite3.connect("TeaterDatabase.db")

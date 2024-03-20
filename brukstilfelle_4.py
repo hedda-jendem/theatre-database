@@ -13,7 +13,9 @@ def sjekkForestillingPaaDato(dato):
 
     rader = cursor.fetchall()
     print("Forestillinger på dato ", dato)
-    print(rader)
+    for rad in rader:
+        stykkeNavn, solgteBilletter = rad
+        print(f"Stykke: {stykkeNavn}, Solgte billetter: {solgteBilletter}")
     con.close()
 
 # sjekkForestillingPaaDato('2024-02-03')
