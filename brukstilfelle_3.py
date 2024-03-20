@@ -39,7 +39,10 @@ def kjop_billetter(BillettType, antallBilletter, ForestillingDato, StykkeID, Kun
     con.commit()
     con.close()
 
-    print(f"OrdreID: {OrdreID} - KundeID: {KundeID} - Antall billetter: {antallBilletter} - Pris: {Pris} - ForestillingDato: {ForestillingDato} - StykkeID: {StykkeID}")
+    TotalPris = regne_pris(BillettType, antallBilletter, StykkeID)
+
+    print(f"Du har nå kjøpt {antallBilletter} billetter til forestilling {StykkeID} den {ForestillingDato} til en totalpris av {TotalPris} kr.")
+    print(f"Dette er stolene du har kjøpt: {stolerRad}")
 
 def ledige_stoler(ForestillingDato, StykkeID):
     con = sqlite3.connect("TeaterDatabase.db")
@@ -68,6 +71,33 @@ def hent_nesteID(tabell, kolonne, con):
     maks_id = cursor.fetchone()[0]
     return maks_id if maks_id is not None else 1
 
+def regne_pris(BillettType, antallBilletter, StykkeID):
+    con = sqlite3.connect("TeaterDatabase.db")
+    cursor = con.cursor()
+
+    cursor.execute('SELECT Pris FROM Prisliste WHERE Type = ? AND Stykke = ?', (BillettType, StykkeID))
+    Pris = cursor.fetchone()[0]
+
+    con.commit()
+    con.close()
+
+    if antallBilletter%10 != 0:
+        return Pris * antallBilletter
+    elif antallBilletter == 10 and StykkeID == 1 and BillettType == 'Ordinær':
+        return 240 * antallBilletter 
+    elif antallBilletter == 10 and StykkeID == 2 and BillettType == 'Ordinær':
+        return 320 * antallBilletter
+    elif antallBilletter == 10 and StykkeID == 1 and BillettType == 'Honnør':
+        return 360 * antallBilletter
+    elif antallBilletter == 10 and StykkeID == 2 and BillettType == 'Honnør':
+        return 270 * antallBilletter
+    
+
+    
+
+
+
+    
 
 
 

@@ -3,6 +3,7 @@ from brukstilfelle_4 import sjekkForestillingPaaDato
 from brukstilfelle_5 import finnNavn
 from brukstilfelle_6 import finnMestSolgteForestilling
 from brukstilfelle_7 import finnSkuespillerISammeAkt
+from brukstilfelle_3 import kjop_billetter
 import sqlite3
 
 def main():
@@ -27,8 +28,8 @@ def main():
         if valg == "2": 
             read_hovedscene("hovedscenen.txt")
             read_gamlescenen("gamle-scene.txt")
-        # elif valg == "3": 
-        #     #kjører brukertilfelle_3.py
+        elif valg == "3": 
+            kjop_billetter('Ordinær', 9, '2024-02-03', 2, 2) 
         elif valg == "4":
             dato = input("Skriv inn en dato for å se hvilke forestillinger som går og antall billetter som er solgt:  ")
             sjekkForestillingPaaDato(dato)
