@@ -7,8 +7,11 @@ from brukstilfelle_3 import kjop_billetter
 import sqlite3
 
 def main():
-    print("Hei! Velkommen til TrøndelagTeater")
-    print("Hvis du har fulgt README vil brukstilfelle 1 er fullført og databasen er satt opp")
+    print("")
+    print("Hei! Velkommen til TrøndelagTeater!")
+    print("")
+    print("Hvis du har fulgt instruksjonene i README vil brukstilfelle 1 allerede være fullført, og databasen er satt opp")
+    print("")
 
 
     while True: 
