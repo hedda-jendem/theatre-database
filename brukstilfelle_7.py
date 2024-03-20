@@ -18,8 +18,9 @@ def finnSkuespillerISammeAkt(skuespiller):
         AktNr = akt[0]
         SkuespillID = akt[1]
         cursor.execute("""SELECT DISTINCT Skuespiller.Navn, Stykke.Navn FROM RolleIAkt 
-                       JOIN Skuespiller ON RolleIAkt.Rolle = Skuespiller.SkuespillerID
                        JOIN Stykke ON RolleIAkt.StykkeID = Stykke.StykkeID
+					   JOIN RolleBesetning ON RolleBesetning.Rolle  = RolleIAkt.Rolle
+                       JOIN Skuespiller ON RolleBesetning.Skuespiller = Skuespiller.SkuespillerID
                        WHERE RolleIAkt.Akt = ? AND Skuespiller.Navn != ? AND RolleIAkt.StykkeID = ?
                        """, (AktNr, skuespiller, SkuespillID,))
         listeOverSkuespillereMedIAkt = cursor.fetchall()
