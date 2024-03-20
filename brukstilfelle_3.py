@@ -25,6 +25,8 @@ def kjop_billetter():
 
     antall_kjopte = 0
     Stoler = []
+    
+    TotalPris = 0
 
     for i in range(1, antallLedigeStoler+1):
         if antall_kjopte == 9:
@@ -38,11 +40,12 @@ def kjop_billetter():
             cursor.execute('INSERT INTO Billett (BillettID, OrdreID, StykkeID, Pris, BillettType, Stolnummer, Stolrad, Stolomrade, SalID, ForestillingDato) VALUES (?,?,?,?,?,?,?,?,?,?)', (i+50, 2, StykkeID, Pris, BillettType, i, ledigRad[0], ledigRad[1], 2, ForestillingDato))
             cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (i, ledigRad[0], ledigRad[1], 2, i+50, 2, ForestillingDato, StykkeID, 2))
             antall_kjopte += 1
+            TotalPris += Pris
 
     con.commit()
     con.close()
 
-    print(f"Du har kjøpt {antall_kjopte} billetter til forestillingen Størst av alt er kjærligheten den 3. februar 2024")
+    print(f"Du har kjøpt {antall_kjopte} billetter til forestillingen Størst av alt er kjærligheten den 3. februar 2024, kostende {TotalPris} kr.")
     print(f"Du har kjøpt setene {Stoler}")
 
 
@@ -89,6 +92,9 @@ def ledige_stoler():
 
     con.commit()
     con.close()
+
+
+    
 
 
 ledige_rad()
