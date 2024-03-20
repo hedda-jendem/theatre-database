@@ -292,7 +292,7 @@ INSERT INTO Kunde (KundeID, Navn) VALUES
 (2, 'Sensorbruker');
 
 -- 
-INSERT INTO Ordre (OrdreID, Kunde) VALUES 
+INSERT INTO Ordre (OrdreID, KundeID) VALUES 
 (1, 1),
 (2, 1);
 
