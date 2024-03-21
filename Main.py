@@ -8,7 +8,7 @@ import sqlite3
 
 def main():
     print("")
-    print("Hei! Velkommen til TrøndelagTeater!")
+    print("Hei! Velkommen til Trøndelag Teater!")
     print("")
     print("Hvis du har fulgt instruksjonene i README vil brukstilfelle 1 allerede være fullført, og databasen er satt opp")
     print("")
@@ -18,11 +18,11 @@ def main():
         print("-------------------------------------------------------------")
         print("Hvilke brukstilfeller ønsker du å kjøre?")
         print("2. Oppdatere hvilke stoler som er solgt")
-        print("3. Kjøp 9 voksenbilletter til Størst av alt er kjæringheten, 3. februar")
-        print("4. List opp hvilke forestillinger, og salg etter bestemt dato")
-        print("5. Finne navn på skuespillere og hvilke roller og sykker de er med i")
-        print("6. Finner hvilke forestillinger som er solgt best, skriver de i synkende rekkefølge")
-        print("7. Finner hvilke andre skuespillere som har spilt i samme akt som gitt skuespiller")
+        print("3. Kjøp 9 voksenbilletter til Størst av alt er kjærligheten, 3. februar")
+        print("4. List opp hvilke forestillinger, og antall salg etter bestemt dato")
+        print("5. Finn navn på skuespillere og hvilke roller og stykker de er med i")
+        print("6. Finn hvilke forestillinger som har solgt best, skrevet ut i synkende rekkefølge")
+        print("7. Finn hvilke andre skuespillere som har spilt i samme akt som angitt skuespiller")
         print("Trykk hvilken som helst annen knapp for å avslutte programmet")
         print("-------------------------------------------------------------")
 
@@ -41,7 +41,7 @@ def main():
         elif valg == "6":
             finnMestSolgteForestilling()
         elif valg == "7":
-            skuespiller = input("Skriv inn navnet på en skuespiller for å hvilke skuespilllere de har spilt med i samme akt:  ")
+            skuespiller = input("Skriv inn navnet på en skuespiller for å se hvilke skuespilllere de har spilt med i samme akt:  ")
             finnSkuespillerISammeAkt(skuespiller)
         elif valg == "8":
             break

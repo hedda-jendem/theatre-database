@@ -27,6 +27,10 @@
 - Filen `tekstligeResultater.txt` viser hvordan en output kan være når man gjennomfører brukerhistoriens spørringer.
 - Trønder 1, Trønder 2 og Baard Bratte har blitt lagt til som skuespiller i alle aktene. Disse rollene var oppgitt på hjemmesiden til TrøndelagTeater, men ikke i tabellen vi fikk i prosjektoppgaven.
 
+**Eksempeldata som kan brukes til å teste databasen:**
+- Dato: 2024-02-03
+- Skuespiller: Emil Olafsson
+
 ## Endringer i databasen gjort etter DB1:
 
 - **Klokkeslett**: Dropper klokkeslett i databasen siden alle forestillinger som viser samme stykke starter samtidig.
