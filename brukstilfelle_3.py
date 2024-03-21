@@ -64,8 +64,7 @@ def ledige_stoler(ForestillingDato, StykkeID):
     con.commit()
     con.close()
 
-    return resultater
-    
+    return resultater 
 
 def hent_nesteID(tabell, kolonne, con):
     cursor = con.cursor()

@@ -32,5 +32,3 @@ def finnSkuespillerISammeAkt(skuespiller):
     print("\nHer kommer alle skuespillere som har spilt med {}, og hvilket skuespill det skjedde i:".format(skuespiller))
     for skuespillerNavn, stykkeNavn in set(resultat):  # Bruker set for å eliminere duplikater
         print(f"{skuespiller} spilte med {skuespillerNavn} i {stykkeNavn}")
-
-    #Arturo Scotti

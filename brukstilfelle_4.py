@@ -17,5 +17,3 @@ def sjekkForestillingPaaDato(dato):
         stykkeNavn, solgteBilletter = rad
         print(f"Stykke: {stykkeNavn}, Solgte billetter: {solgteBilletter}")
     con.close()
-
-# sjekkForestillingPaaDato('2024-02-03')

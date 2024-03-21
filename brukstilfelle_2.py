@@ -35,7 +35,6 @@ def read_gamlescenen(fil):
         elif line in Omrader.keys():
             omradeNavn = line
             Radnummer = Omrader[line]
-            #print(omradeNavn)
 
         elif line.isdigit():
             for Stolnummer, char in enumerate(line.strip(), start=1):  # start=1 for å få stolnummeret til å starte på 1
@@ -44,7 +43,6 @@ def read_gamlescenen(fil):
                     cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (Stolnummer, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
                     teller += 1
         
-                    #print(f"Sete {Stolnummer} i rad {Radnummer} i området {omradeNavn} er tatt med {teller}")
             Radnummer -= 1
 
     con.commit()
@@ -100,7 +98,6 @@ def read_hovedscene(fil):
                     cursor.execute('INSERT INTO Reservert (Stolnummer, Stolrad, Stolomrade, Sal, Billett, Ordre, ForestillingDato, Stykke, Kunde) VALUES (?,?,?,?,?,?,?,?,?)', (StolnummerTeller, Radnummer, omradeNavn.strip(), SalID, teller, 1, dato, StykkeID, 1))
                     teller += 1
 
-                    #print(f"Sete {Stolnummer} i rad {Radnummer} i området {omradeNavn} er tatt med {teller}")
                 elif char == 'x':
                     continue
 
