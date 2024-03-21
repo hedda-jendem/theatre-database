@@ -41,7 +41,7 @@ def main():
         elif valg == "6":
             finnMestSolgteForestilling()
         elif valg == "7":
-            skuespiller = input("Skriv inn navnet på en skuespiller for å finne andre skuespillere hvor de har spilt i samme akt:  ")
+            skuespiller = input("Skriv inn navnet på en skuespiller for å hvilke skuespilllere de har spilt med i samme akt:  ")
             finnSkuespillerISammeAkt(skuespiller)
         elif valg == "8":
             break
